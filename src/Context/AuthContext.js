@@ -1,7 +1,19 @@
-import axios from "axios";
 import React from "react";
-import { useReducer } from "react";
-import { API } from "../helpers/constants";
+import firebase from 'firebase';
+import 'firebase/firestore'
+import 'firebase/auth'
+
+firebase.initializeApp({
+  apiKey: "AIzaSyDA6GSC5GuRYeImM5rH0EYUHT6OiGC73Mw",
+  authDomain: "shop-react-2ac59.firebaseapp.com",
+  projectId: "shop-react-2ac59",
+  storageBucket: "shop-react-2ac59.appspot.com",
+  messagingSenderId: "1037793228947",
+  appId: "1:1037793228947:web:22c3894c2f7e98f4a27566",
+  measurementId: "G-JDSZVCP4S8"
+});
+
+
 
 export const authContext = React.createContext();
 
@@ -15,24 +27,17 @@ const reducer = (state = INIT_STATE, action) => {
 };
 
 const AuthContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, INIT_STATE);
-
-  const registerUser = async (e) => {
-    e.preventDefault();
-    const newUser = {
-      email: e.target[0].value,
-      password: e.target[1].value,
-    };
-    try{
-        const res = await axios.post(`${API}users`, newUser)
-        console.log(res.data);
-    }catch{
-
-    }
-  };
+  const auth = firebase.auth();
+  const firestore = firebase.firestore();
 
   return (
-    <authContext.Provider value={{ registerUser }}>
+    <authContext.Provider
+      value={{
+        firebase,
+        auth,
+        firestore,
+      }}
+    >
       {children}
     </authContext.Provider>
   );

@@ -1,7 +1,17 @@
 .loginInner {
   width: 40%;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 50px;
+}
+
+.info{
+  margin-bottom: 50px;
+  background-color: rgba(255, 0, 0, 0.274);
+  padding: 15px;
+  border: red 1px solid;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #000;
 }
 
 .loginForm h1 {
