@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "email": "helloworld@gmail.com",
+      "password": "Helloworld",
+      "id": 1
+    }
+  ]
+}

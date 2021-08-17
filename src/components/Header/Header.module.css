@@ -1,0 +1,150 @@
+.header {
+}
+
+.headerInner {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.headerMenu {
+  width: 15%;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.headerMenu > span,
+.headerMenu > span::before,
+.headerMenu > span::after {
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 1.5px;
+  background-color: #575757;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.headerMenu > span::before {
+  content: "";
+  top: -5px;
+}
+.headerMenu > span::after {
+  content: "";
+  top: 6px;
+}
+.headerMenu p {
+  margin-left: 33px;
+  font-weight: 700;
+  color: #242424;
+  font-size: 18px;
+}
+
+.headerLogo {
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.headerMore {
+  width: 15%;
+  font-size: 20px;
+  text-align: end;
+  color: #3f3f3f;
+}
+
+.headerMore i {
+  font-size: 28px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.headerMore i + i {
+  margin-left: 30px;
+}
+
+.headerTel {
+  display: none;
+  font-size: 25px;
+  text-align: end;
+  color: #3f3f3f;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .headerMore i {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .headerInner {
+    height: 60px;
+  }
+  .headerMenu {
+    width: 20%;
+  }
+  .headerMore {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .headerInner {
+    height: 60px;
+  }
+  .headerMenu p {
+    display: none;
+  }
+  .headerMenu {
+    width: 20%;
+  }
+  .headerMore {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 70px;
+    padding-top: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 5px #0000003d ;
+  }
+  .headerMore i:nth-child(1)::after {
+    content: "Корзина";
+    margin-top: 5px;
+    font-size: 12px;
+    display: block;
+    font-family: "PT Root UI", -apple-system;
+  }
+  .headerMore i:nth-child(2)::after {
+    content: "Профиль";
+    margin-top: 5px;
+    font-size: 12px;
+    display: block;
+    font-family: "PT Root UI", -apple-system;
+  }
+  .headerMore i:nth-child(3)::after {
+    content: "Поиск";
+    margin-top: 5px;
+    font-size: 12px;
+    display: block;
+    font-family: "PT Root UI", -apple-system;
+  }
+  .headerTel {
+    width: 20%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .headerInner {
+    height: 50px;
+  }
+}
