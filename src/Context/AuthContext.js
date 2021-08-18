@@ -17,15 +17,6 @@ firebase.initializeApp({
 
 export const authContext = React.createContext();
 
-const INIT_STATE = {};
-
-const reducer = (state = INIT_STATE, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
 const AuthContextProvider = ({ children }) => {
   const auth = firebase.auth();
   const firestore = firebase.firestore();

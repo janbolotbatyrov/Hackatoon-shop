@@ -11,7 +11,6 @@ const Login = () => {
     const providerEmail = new firebase.auth.EmailAuthProvider();
     const { user } = await auth.signInWithPopup(providerGoogle);
   };
-
   return (
     <div className={classes.login}>
       <div className="container">

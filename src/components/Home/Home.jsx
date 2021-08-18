@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import firestore from "firebase";
+import Loader from "../Loader/Loader";
+import classes from "./Home.module.css";
+import Products from "../Products/Products";
 
 const Home = () => {
   return (
-    <div>
-      <div className="container">Home</div>
+    <div className={classes.home}>
+      <div className="container">
+        <div className={classes.homeInner}>
+          <div className={classes.homeProducts}>
+            <Products />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

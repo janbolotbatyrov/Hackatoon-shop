@@ -1,9 +1,46 @@
 {
-  "users": [
+  "products":[
     {
-      "email": "helloworld@gmail.com",
-      "password": "Helloworld",
+      "title":"Бомбер красный",
+      "image":"https://static-sl.insales.ru/r/zHq0Qo9Rpi8/fit/440/0/ce/1/plain/images/products/1/2153/423413865/large_Rectangle-6.jpg@webp",
+      "price": "5 290",
+      "type": "smartphone",
       "id": 1
+    },
+    {
+      "title":"Пальто кашемировое",
+      "image":"https://static-sl.insales.ru/r/fMakXaiW64w/fit/440/0/ce/1/plain/images/products/1/2216/423413928/large_Rectangle-7.jpg@webp",
+      "price":"15 490",
+      "type": "smartphone",
+      "id": 2
+    },
+    {
+      "title":"Футболка горчичная",
+      "image":"https://static-sl.insales.ru/r/FKW9CkZERAI/fit/440/0/ce/1/plain/images/products/1/2269/423413981/large_Rectangle-14.jpg@webp",
+      "price":"1 790",
+      "type": "smartphone",
+      "id": 3
+    },
+    {
+      "title":"Кардиган серый",
+      "image":"https://static-sl.insales.ru/r/xcyPNvnYBmE/fit/440/0/ce/1/plain/images/products/1/2350/423414062/large_Rectangle-13.jpg@webp",
+      "price": "5 690 ",
+      "type": "smartphone",
+      "id": 4
+    },
+    {
+      "title":"Куртка с карманами",
+      "image":"https://static-sl.insales.ru/r/oX4oD17i_3g/fit/440/0/ce/1/plain/images/products/1/2439/423414151/large_Rectangle-3.jpg@webp",
+      "price":"6 990",
+      "type": "smartphone",
+      "id":5
+    },
+    {
+      "title":"Пальто песочное",
+      "image":"https://static-sl.insales.ru/r/6ipFDQHGdOk/fit/440/0/ce/1/plain/images/products/1/2515/423414227/large_Rectangle.jpg@webp",
+      "price":"18 990",
+      "type": "smartphone",
+      "id":6
     }
   ]
 }
