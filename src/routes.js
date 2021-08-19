@@ -1,26 +1,39 @@
 import Cart from "./components/Cart/Cart";
 import Home from "./components/Home/Home";
+import Add from "./components/Add/Add";
 import Login from "./components/Login/Login";
 import { CART_ROUTE, LOGIN_ROUTE } from "./utils/consts";
+import Edit from "./components/Edit/Edit";
 
 export const publicRoutes = [
   {
     path: LOGIN_ROUTE,
-    Component: Login
+    Component: Login,
   },
   {
     path: "/",
-    Component: Home
-  }
-]
+    Component: Home,
+  },
+];
 
 export const privateRoutes = [
   {
     path: CART_ROUTE,
-    Component: Cart
+    Component: Cart,
   },
   {
     path: "/",
-    Component: Home
-  }
-]
+    Component: Home,
+  },
+];
+
+export const adminRoutes = [
+  {
+    path: "/add",
+    Component: Add,
+  },
+  {
+    path: "/edit",
+    Component: Edit,
+  },
+];

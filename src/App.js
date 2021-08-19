@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
+import AdminRouter from "./components/AdminRouter";
 import AppRouter from "./components/AppRouter";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -19,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <AppRouter />
+      <AdminRouter />
     </BrowserRouter>
   );
 }

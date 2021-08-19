@@ -20,7 +20,6 @@ export const authContext = React.createContext();
 const AuthContextProvider = ({ children }) => {
   const auth = firebase.auth();
   const firestore = firebase.firestore();
-
   return (
     <authContext.Provider
       value={{
