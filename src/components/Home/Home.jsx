@@ -3,6 +3,7 @@ import firestore from "firebase";
 import Loader from "../Loader/Loader";
 import classes from "./Home.module.css";
 import Products from "../Products/Products";
+import Search from "../Search/Search";
 
 const Home = () => {
   return (

@@ -1,0 +1,91 @@
+.detailInner {
+  display: flex;
+  color: #333;
+  margin-top: 30px;
+}
+
+.detailImg {
+  margin-right: 40px;
+}
+
+.detailStars {
+  display: flex;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.detailImg img {
+  border-radius: 5px;
+  height: 600px;
+}
+
+.detailTitle {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.detailPrice {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.detailSize {
+  margin-bottom: 50px;
+}
+
+.detailSizeBlocks {
+  display: flex;
+  margin-top: 15px;
+}
+
+.detailSizeBlockItem {
+  width: 45px;
+  height: 45px;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.detailBtn {
+  width: 50%;
+  background-color: #ff6163;
+  font-size: 24px;
+  color: #fff;
+  padding: 10px ;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.detailHr {
+  width: 600px;
+  height: 2px;
+  background-color: #f7f7f7;
+  margin: 20px 0 15px ;
+}
+.detailSpec h2{
+    margin-bottom: 20px;
+}
+.detailSpecInner{
+    display: flex;
+}
+
+.detailSpecInner div+div{
+    margin-left: 300px;
+}
+
+.detailSpecInner p{
+    font-size: 14px;
+    color: #999;
+}
+
+.detailSpecInner span{
+    font-size: 18px;
+}

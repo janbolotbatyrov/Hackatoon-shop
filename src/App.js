@@ -7,6 +7,7 @@ import AppRouter from "./components/AppRouter";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Loader from "./components/Loader/Loader";
+import Search from "./components/Search/Search";
 import AuthContextProvider, { authContext } from "./Context/AuthContext";
 import ProductContextProvider from "./Context/ProductContext";
 

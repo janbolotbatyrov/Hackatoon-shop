@@ -4,6 +4,7 @@ import Add from "./components/Add/Add";
 import Login from "./components/Login/Login";
 import { CART_ROUTE, LOGIN_ROUTE } from "./utils/consts";
 import Edit from "./components/Edit/Edit";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 export const publicRoutes = [
   {
@@ -14,6 +15,10 @@ export const publicRoutes = [
     path: "/",
     Component: Home,
   },
+  {
+    path: '/detail/:id',
+    Component: ProductDetail
+  }
 ];
 
 export const privateRoutes = [
@@ -25,6 +30,10 @@ export const privateRoutes = [
     path: "/",
     Component: Home,
   },
+  {
+    path: '/detail/:id',
+    Component: ProductDetail
+  }
 ];
 
 export const adminRoutes = [
@@ -36,4 +45,8 @@ export const adminRoutes = [
     path: "/edit",
     Component: Edit,
   },
+  {
+    path: '/detail:id',
+    Component: ProductDetail
+  }
 ];

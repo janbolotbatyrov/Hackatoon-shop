@@ -9,6 +9,8 @@ export const productContext = React.createContext();
 const INIT_STATE = {
   products: [],
   productToEdit: [],
+  detail: {},
+  search: false,
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -17,6 +19,10 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, products: action.payload };
     case "EDIT_PRODUCT":
       return { ...state, productToEdit: action.payload };
+    case "GET_DETAIL":
+      return { ...state, detail: action.payload };
+    case "OPEN_SEARCH":
+      return { ...state, search: action.payload };
     default:
       return state;
   }
@@ -38,8 +44,8 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
-  const deleteProducts = (id) => {
-    axios.delete(`${API}products/${id}`);
+  const deleteProducts = async (id) => {
+    await axios.delete(`${API}products/${id}`);
     getProducts();
   };
 
@@ -57,16 +63,36 @@ const ProductContextProvider = ({ children }) => {
     history.push("/");
   };
 
+  const getDetail = async (id) => {
+    let { data } = await axios(`${API}products/${id}`);
+    dispatch({
+      type: "GET_DETAIL",
+      payload: data,
+    });
+  };
+
+  const openSearch = () => {
+    let searchVal = !state.search
+    dispatch({
+      type:"OPEN_SEARCH",
+      payload:searchVal
+    })
+  };
+
   return (
     <productContext.Provider
       value={{
         products: state.products,
         productToEdit: state.productToEdit,
+        detail: state.detail,
+        search: state.search,
         getProducts,
         addProducts,
         deleteProducts,
         editProduct,
-        saveProduct
+        saveProduct,
+        getDetail,
+        openSearch
       }}
     >
       {children}

@@ -16,26 +16,13 @@
   cursor: pointer;
 }
 
-.headerMenu > span,
-.headerMenu > span::before,
-.headerMenu > span::after {
-  display: block;
+.headerMenu i {
   position: absolute;
-  width: 18px;
-  height: 1.5px;
-  background-color: #575757;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0px;
+  left: 0;
+  font-size: 24px;
 }
 
-.headerMenu > span::before {
-  content: "";
-  top: -5px;
-}
-.headerMenu > span::after {
-  content: "";
-  top: 6px;
-}
 .headerMenu p {
   margin-left: 33px;
   font-weight: 700;

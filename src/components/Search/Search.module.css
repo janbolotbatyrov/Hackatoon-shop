@@ -1,8 +1,101 @@
+* {
+  overflow: hidden;
+}
+.searchModal {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
+.searchModalInner {
+  width: 80vw;
+  height: 90vh;
+  background-color: #fff;
+  margin: 35px auto;
+  border-radius: 10px;
+}
+
+.searchHeader {
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  width: 30%;
+  height: 35px;
+  border-radius: 50px;
+  border: 1px solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchInput input {
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: 16px;
+  color: teal;
+  padding-left: 20px;
+  font-family: sans-serif;
+}
+
+.searchInput i {
+  background-color: #f7f7f7;
+  padding: 0 15px 0 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.searchContent {
+  overflow: auto;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.searchContent h3 span {
+  font-weight: 400;
+}
+
+.searchEmpty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 400;
+  height: 60%;
+}
+
+.searchModalClose{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    color: #fff;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+
 .products {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 2%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4%;
   grid-template-areas: "product";
   list-style-type: none;
 }
