@@ -12,6 +12,18 @@ body{
   flex-direction: column;
 }
 
+::-webkit-scrollbar {
+  width: 5px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+  background-color: #fff;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: teal;
+}
+
+
 h1,
 h2,
 h3,

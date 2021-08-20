@@ -5,6 +5,7 @@ import Login from "./components/Login/Login";
 import { CART_ROUTE, LOGIN_ROUTE } from "./utils/consts";
 import Edit from "./components/Edit/Edit";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import Favorite from "./components/Favorite/Favorite";
 
 export const publicRoutes = [
   {
@@ -16,9 +17,9 @@ export const publicRoutes = [
     Component: Home,
   },
   {
-    path: '/detail/:id',
-    Component: ProductDetail
-  }
+    path: "/detail/:id",
+    Component: ProductDetail,
+  },
 ];
 
 export const privateRoutes = [
@@ -31,9 +32,13 @@ export const privateRoutes = [
     Component: Home,
   },
   {
-    path: '/detail/:id',
-    Component: ProductDetail
-  }
+    path: "/detail/:id",
+    Component: ProductDetail,
+  },
+  {
+    path: "/favorites",
+    Component: Favorite,
+  },
 ];
 
 export const adminRoutes = [
@@ -46,7 +51,7 @@ export const adminRoutes = [
     Component: Edit,
   },
   {
-    path: '/detail:id',
-    Component: ProductDetail
+    path: "/detail:id",
+    Component: ProductDetail,
   }
 ];

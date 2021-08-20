@@ -18,12 +18,28 @@
   width: 100%;
   height: 365px;
   margin-bottom: 8px;
+  position: relative;
 }
 
 .productImage img {
   width: 100%;
   height: 365px;
   border-radius: 8px;
+}
+
+.productFavorite {
+  background-color: rgba(255, 255, 255, 0.493);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: red;
 }
 
 .productBuy {
@@ -71,6 +87,71 @@
 .productAddToCart:hover {
   background-color: #fff1e6;
   color: #e63946;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search span {
+  cursor: pointer;
+  transition: all 0.1s;
+  font-size: 16px;
+}
+
+.search span:hover {
+  color: teal;
+}
+
+.search span + span {
+  margin-left: 20px;
+}
+.searchInner {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+.searchInner input {
+  width: 300px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0 20px;
+  font-size: 16px;
+  color: teal;
+}
+
+.searchInner i {
+  font-size: 32px;
+  cursor: pointer;
+  padding: 2px 2px;
+  background: #f7f7f7;
+  border-radius: 50px;
+  margin-left: 10px;
+  color: teal;
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  background-color: teal;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pagination li + li {
+  margin-left: 10px;
 }
 
 @media all and (max-width: 1025px) {

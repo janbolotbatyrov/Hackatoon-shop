@@ -9,57 +9,78 @@
       "title": "Бомбер красный",
       "image": "https://static-sl.insales.ru/r/GEekUr52tl4/fit/1000/1000/ce/1/plain/images/products/1/2153/423413865/Rectangle-6.jpg@webp",
       "price": "5 291",
-      "type": "smartphone",
+      "type": "male",
       "id": 1
     },
     {
       "title": "Пальто кашемировое",
       "image": "https://static-sl.insales.ru/r/4aCLhpJdUaY/fit/1000/1000/ce/1/plain/images/products/1/2216/423413928/Rectangle-7.jpg@webp",
       "price": "15 490",
-      "type": "smartphone",
+      "type": "male",
       "id": 2
     },
     {
       "title": "Футболка горчичная",
       "image": "https://static-sl.insales.ru/r/f3t05aE8u6w/fit/1000/1000/ce/1/plain/images/products/1/2269/423413981/Rectangle-14.jpg@webp",
       "price": "1 790",
-      "type": "smartphone",
+      "type": "male",
       "id": 3
     },
     {
       "title": "Кардиган серый",
       "image": "https://static-sl.insales.ru/r/ouwvSdTFSsE/fit/1000/1000/ce/1/plain/images/products/1/2350/423414062/Rectangle-13.jpg@webp",
       "price": "5 690 ",
-      "type": "smartphone",
+      "type": "male",
       "id": 4
     },
     {
       "title": "Куртка с карманами",
       "image": "https://static-sl.insales.ru/r/0KwCEYlO8ag/fit/1000/1000/ce/1/plain/images/products/1/2439/423414151/Rectangle-3.jpg@webp",
       "price": "6 990",
-      "type": "smartphone",
+      "type": "male",
       "id": 5
     },
     {
       "title": "Пальто песочное",
       "image": "https://static-sl.insales.ru/r/cd3mb-V1_fA/fit/1000/1000/ce/1/plain/images/products/1/2515/423414227/Rectangle.jpg@webp",
       "price": "18 990",
-      "type": "smartphone",
+      "type": "male",
       "id": 6
     },
     {
       "image": "https://static-sl.insales.ru/r/dihpjjAiQF4/fit/1000/1000/ce/1/plain/images/products/1/2830/423414542/Rectangle-1.jpg@webp",
       "title": "Джинсы с принтом",
       "price": "3 290",
-      "type": "smartphone",
+      "type": "male",
       "id": 7
     },
     {
       "image": "https://static-sl.insales.ru/r/KwuUoAkZ5Z8/fit/1000/1000/ce/1/plain/images/products/1/3185/423414897/Rectangle-2.jpg@webp",
       "title": "Джинсовая куртка с принтами",
       "price": "6 490",
-      "type": "smartphone",
+      "type": "male",
       "id": 8
+    },
+    {
+      "image": "https://static-sl.insales.ru/r/92FtxE1C5GE/fit/1000/1000/ce/1/plain/images/products/1/1901/423438189/Rectangle.jpg@webp",
+      "title": "Джинсовая куртка синяя",
+      "price": "2 590",
+      "type": "female",
+      "id": 9
+    },
+    {
+      "image": "https://static-sl.insales.ru/r/ZzV6P8CVwaM/fit/1000/1000/ce/1/plain/images/products/1/2795/423439083/Rectangle-1.jpg@webp",
+      "title": "Куртка с вишенками",
+      "price": "7 290",
+      "type": "female",
+      "id": 10
+    },
+    {
+      "image": "https://static-sl.insales.ru/r/Z3_oZxkgg7Y/fit/1000/1000/ce/1/plain/images/products/1/4293/423448773/Rectangle-11.jpg@webp",
+      "title": "Комбинезон серый",
+      "price": "8 890",
+      "type": "female",
+      "id": 11
     }
   ]
 }

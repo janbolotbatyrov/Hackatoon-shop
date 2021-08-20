@@ -10,19 +10,20 @@ const INIT_STATE = {
   products: [],
   productToEdit: [],
   detail: {},
-  search: false,
 };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case "GET_PRODUCT":
-      return { ...state, products: action.payload };
+      return {
+        ...state,
+        products: action.payload.data,
+      };
+
     case "EDIT_PRODUCT":
       return { ...state, productToEdit: action.payload };
     case "GET_DETAIL":
       return { ...state, detail: action.payload };
-    case "OPEN_SEARCH":
-      return { ...state, search: action.payload };
     default:
       return state;
   }
@@ -31,8 +32,11 @@ const reducer = (state = INIT_STATE, action) => {
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  const getProducts = async () => {
-    let { data } = await axios(`${API}products`);
+  const getProducts = async (history) => {
+    const search = new URLSearchParams(history.location.search);
+    history.push(`${history.location.pathname}?${search.toString()}`);
+    let data = await axios(`${API}products${window.location.search}`);
+
     dispatch({
       type: "GET_PRODUCT",
       payload: data,
@@ -71,13 +75,7 @@ const ProductContextProvider = ({ children }) => {
     });
   };
 
-  const openSearch = () => {
-    let searchVal = !state.search
-    dispatch({
-      type:"OPEN_SEARCH",
-      payload:searchVal
-    })
-  };
+  
 
   return (
     <productContext.Provider
@@ -92,7 +90,6 @@ const ProductContextProvider = ({ children }) => {
         editProduct,
         saveProduct,
         getDetail,
-        openSearch
       }}
     >
       {children}
