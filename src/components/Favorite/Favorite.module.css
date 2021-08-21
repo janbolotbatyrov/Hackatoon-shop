@@ -1,0 +1,8 @@
+.favorite{
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+.favorite h2{
+    font-weight: 400;
+}

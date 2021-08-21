@@ -43,6 +43,7 @@
   font-size: 20px;
   text-align: end;
   color: #3f3f3f;
+  z-index: 99;
   background-color: #fff;
 }
 
@@ -91,6 +92,7 @@
   }
   .headerMenu {
     width: 20%;
+    padding: 10px;
   }
   .headerMore {
     position: fixed;
@@ -105,28 +107,28 @@
     box-shadow: 0px 0px 5px #0000003d;
   }
   .headerMore i:nth-child(1)::after {
-    content: "Корзина";
+    content: "Корзина  ";
     margin-top: 5px;
     font-size: 12px;
     display: block;
     font-family: "PT Root UI", -apple-system;
   }
   .headerMore i:nth-child(2)::after {
-    content: "Профиль";
+    content: "Избранные";
     margin-top: 5px;
     font-size: 12px;
     display: block;
     font-family: "PT Root UI", -apple-system;
   }
   .headerMore i:nth-child(3)::after {
-    content: "Поиск";
+    content: "Выйти";
     margin-top: 5px;
     font-size: 12px;
     display: block;
     font-family: "PT Root UI", -apple-system;
   }
   .headerMore i:nth-child(4)::after {
-    content: "Выйти";
+    content: "Добавить";
     margin-top: 5px;
     font-size: 12px;
     display: block;

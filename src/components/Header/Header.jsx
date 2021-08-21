@@ -29,19 +29,14 @@ const Header = () => {
             STORE
           </div>
           <div className={classes.headerMore}>
-            {user ? (
-              user.uid === UID ? (
-                <i
-                  class="bx bx-message-alt-add"
-                  onClick={() => history.push("/add")}
-                ></i>
-              ) : null
-            ) : null}
             <i
               className="bx bx-cart-alt"
               onClick={() => history.push("/cart")}
             ></i>
-            <i class='bx bx-heart' onClick={()=>history.push('/favorites')}></i>
+            <i
+              class="bx bx-heart"
+              onClick={() => history.push("/favorites")}
+            ></i>
 
             {user ? (
               <i
@@ -54,7 +49,16 @@ const Header = () => {
                 onClick={() => history.push(LOGIN_ROUTE)}
               ></i>
             )}
+            {user ? (
+              user.uid === UID ? (
+                <i
+                  class="bx bx-message-alt-add"
+                  onClick={() => history.push("/add")}
+                ></i>
+              ) : null
+            ) : null}
           </div>
+
           <div className={classes.headerTel}>
             <i className="bx bx-phone"></i>
           </div>

@@ -10,6 +10,7 @@ const INIT_STATE = {
   products: [],
   productToEdit: [],
   detail: {},
+  favorites: {},
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -19,11 +20,12 @@ const reducer = (state = INIT_STATE, action) => {
         ...state,
         products: action.payload.data,
       };
-
     case "EDIT_PRODUCT":
       return { ...state, productToEdit: action.payload };
     case "GET_DETAIL":
       return { ...state, detail: action.payload };
+    case "GET_FAVORITE":
+      return { ...state, favorites: action.payload };
     default:
       return state;
   }
@@ -75,8 +77,66 @@ const ProductContextProvider = ({ children }) => {
     });
   };
 
-  
+  const addProductInFovarite = (product) => {
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
+    if (!favorite) {
+      favorite = {
+        products: [],
+        totalPrice: 0,
+      };
+    }
 
+    let newProduct = {
+      item: product,
+      count: 1,
+      subPrice: 0,
+    };
+    let filteredFavorite = favorite.products.filter(
+      (elem) => elem.item.id === product.id
+    );
+    if (filteredFavorite.length > 0) {
+      favorite.products = favorite.products.filter(
+        (elem) => elem.item.id !== product.id
+      );
+    } else {
+      favorite.products.push(newProduct);
+    }
+    localStorage.setItem("favorite", JSON.stringify(favorite));
+  };
+
+  const getFavorite = () => {
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
+    if (!favorite) {
+      favorite = {
+        products: [],
+        totalPrice: 0,
+      };
+    }
+    dispatch({
+      type: "GET_FAVORITE",
+      payload: favorite,
+    });
+  };
+
+  const checkProductInCart = (id) => {
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
+    if (!favorite) {
+      favorite = {
+        products: [],
+        totalPrice: 0,
+      };
+    }
+    let newFavorite = favorite.products.filter((elem) => elem.item.id === id);
+    return newFavorite.length > 0 ? true : false;
+  };
+
+  const deleteProductInFavorite = (product) => {
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
+    let filteredFavorite = favorite.products.filter(
+      (elem) => elem.item.id === product.item.id
+    );
+    console.log(filteredFavorite);
+  };
   return (
     <productContext.Provider
       value={{
@@ -84,12 +144,17 @@ const ProductContextProvider = ({ children }) => {
         productToEdit: state.productToEdit,
         detail: state.detail,
         search: state.search,
+        favorites: state.favorites,
         getProducts,
         addProducts,
         deleteProducts,
         editProduct,
         saveProduct,
         getDetail,
+        addProductInFovarite,
+        getFavorite,
+        checkProductInCart,
+        deleteProductInFavorite,
       }}
     >
       {children}

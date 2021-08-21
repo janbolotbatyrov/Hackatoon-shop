@@ -1,10 +1,13 @@
+import axios from "axios";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Button, Pagination } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router-dom";
 import { authContext } from "../../Context/AuthContext";
 import { productContext } from "../../Context/ProductContext";
+import { API } from "../../helpers/constants";
 import { UID } from "../../utils/consts";
+import ProductCard from "./ProductCard";
 import classes from "./Products.module.css";
 
 const Products = () => {
@@ -96,64 +99,7 @@ const Products = () => {
       </div>
       <ul className={classes.products}>
         {products.slice(pagStart, pagEnd).map((product) => (
-          <li
-            key={product.id}
-            className={classes.productItem}
-            onClick={(e) => {
-              history.push(`detail/${product.id}`);
-            }}
-          >
-            <div className={classes.productImage}>
-              <img src={product.image} alt="" />
-              <div
-                className={classes.productFavorite}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  history.push("/favorites");
-                }}
-              >
-                <i class="bx bx-heart"></i>
-              </div>
-            </div>
-            <div className={classes.productTitle}>{product.title}</div>
-            <div className={classes.productBuy}>
-              <div className={classes.productPrice}>
-                {product.price} &#x20bd;
-              </div>
-              {user ? (
-                user.uid === UID ? (
-                  <div className={classes.productAdmin}>
-                    <div
-                      className={classes.productAddToCart}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        editProduct(product.id, history);
-                      }}
-                    >
-                      <i class="bx bxs-edit"></i>
-                    </div>
-                    <div
-                      className={classes.productAddToCart}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        deleteProducts(product.id);
-                      }}
-                    >
-                      <i class="bx bx-trash-alt"></i>
-                    </div>
-                  </div>
-                ) : null
-              ) : null}
-
-              <div
-                className={classes.productAddToCart}
-                onClick={(e) => handleClickToCart(e)}
-              >
-                {/* <i class="bx bxs-cart-alt"></i> */}
-                <i className="bx bx-cart-alt"></i>
-              </div>
-            </div>
-          </li>
+          <ProductCard product={product} />
         ))}
       </ul>
       <div className={classes.pagination}>{pagItems}</div>
