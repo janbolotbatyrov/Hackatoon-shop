@@ -18,8 +18,8 @@ const Add = () => {
       price: productPrice,
       type: productType
     };
-    addProducts(newProduct);
-    history.push('/')
+    addProducts(newProduct, history);
+    // history.push('/')
   }
 
   return (

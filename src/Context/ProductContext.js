@@ -11,6 +11,7 @@ const INIT_STATE = {
   productToEdit: [],
   detail: {},
   favorites: {},
+  comments: {},
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -26,16 +27,17 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, detail: action.payload };
     case "GET_FAVORITE":
       return { ...state, favorites: action.payload };
+    case "GET_COMMENT":
+      return { ...state, comments: action.payload };
     default:
       return state;
   }
 };
-
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const getProducts = async (history) => {
-    const search = new URLSearchParams(history.location.search);
+    const search = new  URLSearchParams(history.location.search);
     history.push(`${history.location.pathname}?${search.toString()}`);
     let data = await axios(`${API}products${window.location.search}`);
 
@@ -45,14 +47,14 @@ const ProductContextProvider = ({ children }) => {
     });
   };
 
-  const addProducts = (newProduct) => {
+  const addProducts = (newProduct,history) => {
     axios.post(`${API}products`, newProduct);
-    getProducts();
+    getProducts(history);
   };
 
-  const deleteProducts = async (id) => {
+  const deleteProducts = async (id,history  ) => {
     await axios.delete(`${API}products/${id}`);
-    getProducts();
+    getProducts(history);
   };
 
   const editProduct = async (id, history) => {
@@ -82,14 +84,12 @@ const ProductContextProvider = ({ children }) => {
     if (!favorite) {
       favorite = {
         products: [],
-        totalPrice: 0,
       };
     }
 
     let newProduct = {
       item: product,
       count: 1,
-      subPrice: 0,
     };
     let filteredFavorite = favorite.products.filter(
       (elem) => elem.item.id === product.id
@@ -102,6 +102,25 @@ const ProductContextProvider = ({ children }) => {
       favorite.products.push(newProduct);
     }
     localStorage.setItem("favorite", JSON.stringify(favorite));
+  };
+
+  const deleteProductInFavorite = (product) => {
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
+    const filtered = favorite.products.filter(
+      (elem) => elem.item.id !== product.id
+    );
+    if (!favorite) {
+      favorite = {
+        products: [],
+      };
+    }
+
+    let newProduct = {
+      products: filtered,
+      count: 1,
+    };
+    localStorage.setItem("favorite", JSON.stringify(newProduct));
+    getFavorite();
   };
 
   const getFavorite = () => {
@@ -130,13 +149,27 @@ const ProductContextProvider = ({ children }) => {
     return newFavorite.length > 0 ? true : false;
   };
 
-  const deleteProductInFavorite = (product) => {
-    let favorite = JSON.parse(localStorage.getItem("favorite"));
-    let filteredFavorite = favorite.products.filter(
-      (elem) => elem.item.id === product.item.id
-    );
-    console.log(filteredFavorite);
+  const getComment = async (id) => {
+    let { data } = await axios(`${API}products`);
+    let comment = data[id - 1].comments.map((comment) => comment);
+    dispatch({
+      type: "GET_COMMENT",
+      payload: comment,
+    });
   };
+
+  const addComments = async (newComment, id) => {
+    let comment = {
+      comments: [...state.comments, newComment],
+    };
+    await axios.patch(`${API}products/${(newComment, id)}`, comment);
+    getComment(id);
+  };
+
+  const deleteComment = async(productId,id) => {
+    
+  };
+
   return (
     <productContext.Provider
       value={{
@@ -145,6 +178,7 @@ const ProductContextProvider = ({ children }) => {
         detail: state.detail,
         search: state.search,
         favorites: state.favorites,
+        comments: state.comments,
         getProducts,
         addProducts,
         deleteProducts,
@@ -155,6 +189,9 @@ const ProductContextProvider = ({ children }) => {
         getFavorite,
         checkProductInCart,
         deleteProductInFavorite,
+        getComment,
+        addComments,
+        deleteComment,
       }}
     >
       {children}

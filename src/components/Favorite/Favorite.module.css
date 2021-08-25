@@ -6,3 +6,8 @@
 .favorite h2{
     font-weight: 400;
 }
+
+.productNo {
+    color: red;
+    background-color: #000;
+}

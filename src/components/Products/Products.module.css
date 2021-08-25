@@ -6,7 +6,9 @@
   grid-template-areas: "product";
   list-style-type: none;
 }
-
+.favorite{
+  margin-top: 20px;
+}
 .productItem {
   grid-area: "product";
   font-weight: 300;

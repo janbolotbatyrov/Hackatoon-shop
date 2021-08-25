@@ -13,16 +13,22 @@ const ProductCard = ({ product }) => {
     editProduct,
     addProductInFovarite,
     checkProductInCart,
+    getProducts
   } = useContext(productContext);
   const { auth } = useContext(authContext);
   const [user] = useAuthState(auth);
-  const [isFavorite, setIsFavorite] = useState(checkProductInCart(product.id))
 
   const onClickFavorite = (e) => {
     e.stopPropagation();
     addProductInFovarite(product);
-    setIsFavorite(!isFavorite)
+    checkProductInCart(product.id) 
+    getProducts(history)
   };
+
+  const onWarrning = (e) =>{
+    e.stopPropagation()
+    alert('Сначала авторизуйтесь!')
+  }
 
   return (
     <li
@@ -34,8 +40,8 @@ const ProductCard = ({ product }) => {
     >
       <div className={classes.productImage}>
         <img src={product.image} alt="" />
-        <div className={classes.productFavorite} onClick={onClickFavorite}>
-          {isFavorite ? (
+        <div className={classes.productFavorite} onClick={user ? onClickFavorite : onWarrning}>
+          {checkProductInCart(product.id) ? (
             <i class="bx bxs-heart"></i>
           ) : (
             <i class="bx bx-heart"></i>
@@ -61,7 +67,7 @@ const ProductCard = ({ product }) => {
                 className={classes.productAddToCart}
                 onClick={(e) => {
                   e.stopPropagation();
-                  deleteProducts(product.id);
+                  deleteProducts(product.id,history);
                 }}
               >
                 <i class="bx bx-trash-alt"></i>

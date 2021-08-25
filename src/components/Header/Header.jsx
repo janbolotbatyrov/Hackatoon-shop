@@ -32,6 +32,7 @@ const Header = () => {
             <i
               className="bx bx-cart-alt"
               onClick={() => history.push("/cart")}
+              disabled
             ></i>
             <i
               class="bx bx-heart"

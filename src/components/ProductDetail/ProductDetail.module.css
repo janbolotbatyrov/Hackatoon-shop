@@ -57,7 +57,7 @@
   background-color: #ff6163;
   font-size: 24px;
   color: #fff;
-  padding: 10px ;
+  padding: 10px;
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -69,24 +69,114 @@
   width: 600px;
   height: 2px;
   background-color: #f7f7f7;
-  margin: 20px 0 15px ;
+  margin: 20px 0 15px;
 }
-.detailSpec h2{
-    margin-bottom: 20px;
+.detailSpec h2 {
+  margin-bottom: 20px;
 }
-.detailSpecInner{
-    display: flex;
-}
-
-.detailSpecInner div+div{
-    margin-left: 300px;
+.detailSpecInner {
+  display: flex;
 }
 
-.detailSpecInner p{
-    font-size: 14px;
-    color: #999;
+.detailSpecInner div + div {
+  margin-left: 300px;
 }
 
-.detailSpecInner span{
-    font-size: 18px;
+.detailSpecInner p {
+  font-size: 14px;
+  color: #999;
+}
+
+.detailSpecInner span {
+  font-size: 18px;
+}
+
+.commentInner {
+  margin-top: 20px;
+}
+
+.commentList {
+  list-style-type: none;
+}
+
+.commentList li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.commentList li span {
+  color: teal;
+  font-weight: 700;
+}
+
+.commentList li i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ff6163;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.commentList h3 {
+  margin-bottom: 30px;
+}
+
+.commentListName {
+  width: 50%;
+}
+.commentListComment {
+  margin-top: 10px;
+  width: 500px;
+}
+
+.commentListComment span {
+  height: 100%;
+}
+
+.commentInp {
+  border: 1px solid #ccc;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.commentInp input {
+  display: block;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0 20px;
+}
+
+.commentInp button {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: teal;
+  color: #fff;
+  width: 67%;
+  cursor: pointer;
+}
+
+.commentInp textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 5px;
 }

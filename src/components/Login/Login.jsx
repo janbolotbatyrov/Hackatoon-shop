@@ -17,7 +17,7 @@ const Login = () => {
     const providerGoogle = new firebase.auth.GoogleAuthProvider();
     const providerEmail = new firebase.auth.EmailAuthProvider();
     const { user } = await auth.signInWithPopup(providerGoogle);
-    history.push('/cart')
+    history.push('/')
   };
 
   return (

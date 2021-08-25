@@ -40,7 +40,6 @@ const Products = () => {
     search.set("type", field);
     history.push(`${history.location.pathname}?${search.toString()}`);
     getProducts(history);
-    console.log(sortData);
   }
 
   const handleSearchValue = (e) => {
@@ -48,7 +47,6 @@ const Products = () => {
     search.set("q", e.target.value);
     history.push(`${history.location.pathname}?${search.toString()}`);
     setSearchVal(e.target.value);
-    console.log(searchVal);
     getProducts(history);
   };
 

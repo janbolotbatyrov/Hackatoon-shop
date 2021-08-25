@@ -13,8 +13,9 @@ const Favorite = () => {
   useEffect(() => {
     getFavorite();
   }, []);
+
   return (
-    <ul>
+    <ul className={classes.favorite}>
       <div className="container">
         <h2>Избранное</h2>
         <div className={classes.products}>
@@ -23,7 +24,10 @@ const Favorite = () => {
               <FavoriteCard product={product} />
             ))
           ) : (
-            <div>Список избранного пуст</div>
+            <div>
+              (<h3 className={classes.productNo}>Список избранного пуст</h3>)
+              {console.log('1')}
+            </div>
           )}
         </div>
       </div>

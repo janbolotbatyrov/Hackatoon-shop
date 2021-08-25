@@ -11,18 +11,20 @@ const FavoriteCard = ({ product }) => {
   const { auth } = useContext(authContext);
   const {
     favorites,
+    products,
     getFavorite,
     checkProductInCart,
     addProductInFovarite,
     deleteProductInFavorite,
     deleteProducts,
     editProduct,
+    getProducts,
   } = useContext(productContext);
-  const [isFavorite, setIsFavorite] = useState(!checkProductInCart(product.id));
   const onClickFavorite = (e) => {
     e.stopPropagation();
-    addProductInFovarite(product);
-    setIsFavorite(!isFavorite);
+    deleteProductInFavorite(product.item)
+    checkProductInCart(product.id);
+    getProducts(history)
   };
   return (
     <li
@@ -34,8 +36,8 @@ const FavoriteCard = ({ product }) => {
     >
       <div className={classes.productImage}>
         <img src={product.item.image} alt="" />
-        <div className={classes.productFavorite} onClick={null}>
-          {isFavorite ? (
+        <div className={classes.productFavorite} onClick={onClickFavorite}>
+          {favorites ? (
             <i class="bx bxs-heart"></i>
           ) : (
             <i class="bx bx-heart"></i>
