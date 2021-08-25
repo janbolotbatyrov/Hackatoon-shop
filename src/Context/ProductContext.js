@@ -37,7 +37,7 @@ const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const getProducts = async (history) => {
-    const search = new  URLSearchParams(history.location.search);
+    const search = new URLSearchParams(history.location.search);
     history.push(`${history.location.pathname}?${search.toString()}`);
     let data = await axios(`${API}products${window.location.search}`);
 
@@ -47,12 +47,12 @@ const ProductContextProvider = ({ children }) => {
     });
   };
 
-  const addProducts = (newProduct,history) => {
+  const addProducts = (newProduct, history) => {
     axios.post(`${API}products`, newProduct);
     getProducts(history);
   };
 
-  const deleteProducts = async (id,history  ) => {
+  const deleteProducts = async (id, history) => {
     await axios.delete(`${API}products/${id}`);
     getProducts(history);
   };
@@ -166,9 +166,7 @@ const ProductContextProvider = ({ children }) => {
     getComment(id);
   };
 
-  const deleteComment = async(productId,id) => {
-    
-  };
+  const deleteComment = async (productId, id) => {};
 
   return (
     <productContext.Provider

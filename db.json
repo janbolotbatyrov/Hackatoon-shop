@@ -13,29 +13,14 @@
       "type": "male",
       "comments": [
         {
-          "name": "2",
-          "comment": "2",
+          "name": "Жанболот",
+          "comment": "Проверка коментарии ",
           "id": "1"
         },
         {
-          "name": "1",
-          "comment": "1",
+          "name": "Admin",
+          "comment": "Это админ!!!  ",
           "id": "2"
-        },
-        {
-          "name": "3",
-          "comment": "3",
-          "id": "3"
-        },
-        {
-          "name": "4",
-          "comment": "4",
-          "id": "4"
-        },
-        {
-          "name": "5",
-          "comment": "5",
-          "id": "5"
         }
       ],
       "id": 1
@@ -47,14 +32,9 @@
       "type": "female",
       "comments": [
         {
-          "name": "Janbolot",
-          "comment": "Проверка",
+          "name": "Али",
+          "comment": "Отличная куртка!!!",
           "id": 1
-        },
-        {
-          "name": "1",
-          "comment": "2",
-          "id": 1629865644431
         }
       ],
       "id": 2
@@ -64,7 +44,13 @@
       "title": "Пальто кашемировое",
       "price": "15 490",
       "type": "male",
-      "comments": [],
+      "comments": [
+        {
+          "name": "Janbolot",
+          "comment": "Вауу! Круто!!!",
+          "id": 1629895687300
+        }
+      ],
       "id": 3
     },
     {
@@ -112,7 +98,18 @@
       "title": "Джинсовая куртка голубая",
       "price": "2 990",
       "type": "male",
-      "comments": [],
+      "comments": [
+        {
+          "name": "Janbolot",
+          "comment": "Ваууу! Круто!!!",
+          "id": 1629895415862
+        },
+        {
+          "name": "User",
+          "comment": "I'm user",
+          "id": 1629895432981
+        }
+      ],
       "id": 9
     },
     {

@@ -16,10 +16,11 @@ const Add = () => {
       image: productImg,
       title: productTitle,
       price: productPrice,
-      type: productType
+      type: productType,
+      comments: []
     };
     addProducts(newProduct, history);
-    // history.push('/')
+    history.push('/')
   }
 
   return (

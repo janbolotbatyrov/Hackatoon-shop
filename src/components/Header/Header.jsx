@@ -36,13 +36,17 @@ const Header = () => {
             ></i>
             <i
               class="bx bx-heart"
-              onClick={() => history.push("/favorites")}
+              onClick={() =>
+                user
+                  ? history.push("/favorites")
+                  : alert("Сначала авторизуйтесь!")
+              }
             ></i>
 
             {user ? (
               <i
                 class="bx bx-log-out-circle"
-                onClick={() => auth.signOut()}
+                onClick={() =>{ auth.signOut(); history.push('/')}}
               ></i>
             ) : (
               <i
